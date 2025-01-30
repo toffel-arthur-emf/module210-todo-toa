@@ -1,4 +1,6 @@
-const apiEndpoint = "http://localhost:8080/api/tasks";
+const apiEndpoint = "http://20.82.190.95:8080/api/tasks";
+
+//ancien local : "http://localhost:8080/api/tasks"
 
 //ancien apiEndpoint : https://fa-todo-backend-baqmes.azurewebsites.net/api/tasks
 
@@ -111,3 +113,4 @@ $(document).ready(function () {
     }
   }
 });
+

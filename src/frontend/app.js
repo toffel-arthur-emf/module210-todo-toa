@@ -1,4 +1,6 @@
-const apiEndpoint = "http://20.82.190.95:8080/api/tasks";
+const apiEndpoint = "https://backend-210-300621-arthur-toffel.livelypebble-c059c463.northeurope.azurecontainerapps.io/api/tasks";
+
+// ancien coneteneur : http://20.82.190.95:8080/api/tasks
 
 //ancien local : "http://localhost:8080/api/tasks"
 

@@ -24,7 +24,8 @@ jobs:
       
       - name: build docker image
         run: |
-          commande à réaliser
+          docker build -t $REG_NAME/c213-emf/$IMAGE_NAME:toa
+
 
       - name: tag docker image
         run: |

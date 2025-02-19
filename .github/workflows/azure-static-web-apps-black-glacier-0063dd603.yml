@@ -38,7 +38,7 @@ jobs:
           if [ -f ./../../src/frontend/index.html ]; then
             echo "Le fichier index.html existe"
           else
-            echo "Le fichier index.html n'existe pas"
+            echo "Erreur : index.html n'existe pas!"
             exit 1
           fi
       - name: Build And Deploy

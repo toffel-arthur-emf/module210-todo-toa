@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/frontend/**'  # Se déclenche uniquement si des fichiers dans 'src/frontend' sont modifiés
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:

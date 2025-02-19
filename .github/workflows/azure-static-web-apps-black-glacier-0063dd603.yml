@@ -62,14 +62,14 @@ jobs:
           temporaryPublicStorage: true
           ## remonte l’erreur en cas de score de performance ou d’accessibilité trop bas.
           config: |
-            {
-              "ci": {
-                "assertions": {
-                  "categories:performance": ["error", {"minScore": 0.8}],
-                  "categories:accessibility": ["error", {"minScore": 0.9}]
-                }
+          {
+            "ci": {
+              "assertions": {
+                "categories:performance": ["error", {"minScore": 0.8}],
+                "categories:accessibility": ["error", {"minScore": 0.9}]
               }
             }
+          }
 
 
   close_pull_request_job:

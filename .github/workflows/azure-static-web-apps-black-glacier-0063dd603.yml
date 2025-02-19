@@ -35,7 +35,7 @@ jobs:
       ## vérifier la présence du fichier index.html
       - name: Vérifier la présence du fichier index.html
         run: |
-          if [ -f ./../../src/frontend/index.html ]; then
+          if [ -f ../../src/frontend/index.html ]; then
             echo "Le fichier index.html existe"
           else
             echo "Erreur : index.html n'existe pas!"

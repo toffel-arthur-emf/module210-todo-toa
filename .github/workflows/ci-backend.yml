@@ -30,7 +30,7 @@ jobs:
 
       - name: tag docker image
         run: |
-          commande à réaliser
+          docker tag ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }}:toa
 
       - name: push sur la registry
         run: |

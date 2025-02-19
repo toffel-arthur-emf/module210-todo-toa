@@ -24,7 +24,7 @@ jobs:
       
       - name: build docker image
         run: |
-          docker build -t ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }}:toa .
+          docker build -t ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }} .
 
 
       - name: tag docker image

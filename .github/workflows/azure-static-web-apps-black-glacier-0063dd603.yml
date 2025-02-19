@@ -61,7 +61,7 @@ jobs:
           urls: https://azure.arthurtoffel.emf-informatique.ch/
           temporaryPublicStorage: true
           configPath: .lighthouserc.json  # Utilisation du fichier de configuration Lighthouse
-
+          fail-fast: true
 
 
 

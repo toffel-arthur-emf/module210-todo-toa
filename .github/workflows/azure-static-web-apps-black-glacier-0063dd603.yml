@@ -60,16 +60,8 @@ jobs:
         with:
           urls: https://azure.arthurtoffel.emf-informatique.ch/
           temporaryPublicStorage: true
-          debugLogging: true  # Active les logs pour voir les erreurs éventuelles
-          config: |
-            {
-              "ci": {
-                "assertions": {
-                  "performance": ["error", { "minScore": 1 }],
-                  "accessibility": ["error", { "minScore": 1 }]
-                }
-              }
-            }
+          configPath: .lighthouserc.json  # Utilisation du fichier de configuration Lighthouse
+
 
 
 

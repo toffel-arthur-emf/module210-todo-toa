@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Déclenchement lorsque le code est poussé sur main
+    paths:
+      - 'src/backend/**'  # Se déclenche uniquement si des fichiers dans 'src/backend' sont modifiés
 
 env:
   REG_NAME: "exo.container-registry.com" # Nom du registre sans "azurecr.io"

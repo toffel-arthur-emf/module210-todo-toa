@@ -35,4 +35,4 @@ jobs:
 
       - name: push sur la registry
         run: |
-          commande à réaliser
+          docker push ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }}:toa

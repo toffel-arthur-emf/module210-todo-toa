@@ -59,6 +59,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: https://azure.arthurtoffel.emf-informatique.ch/
+          temporaryPublicStorage: true
 
 
   close_pull_request_job:

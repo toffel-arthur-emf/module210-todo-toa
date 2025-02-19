@@ -55,11 +55,11 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
       ## Lighthouse CI Action
-      - name: Lighthouse CI Action
-        uses: treosh/lighthouse-ci-action@v12
+      - name: Run Lighthouse on urls and validate with lighthouserc
+        uses: treosh/lighthouse-ci-action@v12  
         with:
-          configPath: .lighthouserc.json  # Référence le fichier de config
-          artifactName: lighthouse-results
+          urls: 'https://azure.arthurtoffel.emf-informatique.ch/'
+          configPath: './lighthouserc.json'
 
 
 

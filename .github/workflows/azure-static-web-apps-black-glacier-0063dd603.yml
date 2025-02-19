@@ -60,16 +60,18 @@ jobs:
         with:
           urls: https://azure.arthurtoffel.emf-informatique.ch/
           temporaryPublicStorage: true
-          ## remonte l’erreur en cas de score de performance ou d’accessibilité trop bas.
+          debugLogging: true  # Active les logs pour voir les erreurs éventuelles
           config: |
             {
-                "ci": {
-                  "assertions": {
-                    "categories:performance": ["error", {"minScore": 1}],
-                    "categories:accessibility": ["error", {"minScore": 1}]
-                  }
-                } 
+              "ci": {
+                "assertions": {
+                  "performance": ["error", { "minScore": 1 }],
+                  "accessibility": ["error", { "minScore": 1 }]
+                }
               }
+            }
+
+
 
 
   close_pull_request_job:

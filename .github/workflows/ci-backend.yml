@@ -20,7 +20,7 @@ jobs:
       #ajouter les étapes pour build votre image docker et la pousser sur la registry donnée
       - name: connection à la repository
         run: |
-          docker login -u quentin.badoud@edufr.ch -p C4cG4FfJBBpe4cWHSZ5HjgXWFR4wa7wU $REG_NAME
+          docker login -u quentin.badoud@edufr.ch -p ${{ secrets.DOCKER_PASSWORD }} $REG_NAME
       
       - name: build docker image
         run: |

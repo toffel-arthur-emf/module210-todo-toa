@@ -1,8 +1,17 @@
 {
 "ci": {
     "assertions": {
-    "categories:performance": ["error", { "minScore": 1 }],
-    "categories:accessibility": ["error", { "minScore": 1 }]
+    "performance": ["error", { "minScore": 1 }],
+    "accessibility": ["error", { "minScore": 1 }]
+    },
+    "collect": {
+    "url": [
+        "https://azure.arthurtoffel.emf-informatique.ch/"
+    ],
+    "numberOfRuns": 1
+    },
+    "upload": {
+    "target": "temporary-public-storage"
     }
-    }
+}
 }

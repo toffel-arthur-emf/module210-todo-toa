@@ -58,10 +58,7 @@ jobs:
       - name: Lighthouse CI Action
         uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: https://azure.arthurtoffel.emf-informatique.ch/
-          temporaryPublicStorage: true
-          configPath: .lighthouserc.json  # Utilisation du fichier de configuration Lighthouse
-          fail-fast: true
+          configPath: .lighthouserc.json
 
 
 

@@ -8,7 +8,7 @@ require('dotenv').config();
 
 // 2.) Retrieve the Certificate Authority chain file (wherever you placed it - notice it's just in the Node project root here)
 //const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
-
+//test backend
 // Create a connection pool
 var pool = 
   mariadb.createPool({

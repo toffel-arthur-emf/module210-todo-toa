@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App with Backend</title>
+  <title>Todo App - Alpha</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="app.js" defer></script>
@@ -12,12 +12,26 @@
 
 <body>
   <div class="app-container">
-    <h1>Todo App is cool</h1>
+    <div class="image-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1ARFUTwD-EhOZd_iyaLJV2yNqNFnWLxuPQ&s" alt="Alpha Image" class="alpha-image" id="alpha-image">
+    </div>
+    <h1>Todo App - Alpha Sigma</h1>
     <form id="todo-form">
       <input type="text" id="todo-input" placeholder="Add a new task" required>
       <button type="submit">Add</button>
     </form>
-    <ul id="todo-list"></ul>
+
+    <!-- Section avec 2 listes : une pour les tâches à faire et une pour les tâches réalisées -->
+    <div class="task-columns">
+      <div class="task-column">
+        <h2>Tâches à faire</h2>
+        <ul id="todo-list"></ul>
+      </div>
+      <div class="task-column">
+        <h2>Tâches réalisées</h2>
+        <ul id="completed-list"></ul>
+      </div>
+    </div>
   </div>
 </body>
 

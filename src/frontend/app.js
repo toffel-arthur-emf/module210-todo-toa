@@ -66,10 +66,14 @@ $(document).ready(function () {
     }
   });
 
-  // Supprimer une tâche
+  // Supprimer une tâche avec une animation
   $("#todo-list, #completed-list").on("click", ".delete-btn", async function (e) {
     e.stopPropagation();
     const taskId = $(this).parent().data("id");
+
+    // Ajoute une animation avant la suppression
+    const listItem = $(this).parent();
+    listItem.addClass("deleting"); // Ajout de la classe pour l'animation
 
     try {
       await fetch(`${apiEndpoint}?id=${taskId}`, {
@@ -97,9 +101,9 @@ $(document).ready(function () {
           .data("id", task.id)
           .addClass(task.completed ? "completed" : "")
           .append(
-            $("<button>")
-              .text("Delete")
+            $("<button>") // Bouton de suppression avec icône
               .addClass("delete-btn")
+              .html('<i class="fas fa-trash-alt"></i>') // Icône de corbeille
           )
           .prepend(
             $("<input>")

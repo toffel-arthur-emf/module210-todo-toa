@@ -11,7 +11,7 @@ $(document).ready(function () {
   loadTasks();
 
   // Ajouter une tâche
-  $("#todo-form").on("submit", function (e) {
+  $("#todo-form").on("submit", async function (e) {
     e.preventDefault();
     changeImage();
     const description = $("#todo-input").val().trim();
@@ -22,13 +22,14 @@ $(document).ready(function () {
     $("#todo-input, button").prop("disabled", true);
 
     try {
-      fetch(apiEndpoint, {
+      await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(task),
       });
-      loadTasks();
+
       $("#todo-input").val("");
+      await loadTasks();
     } catch (error) {
       console.error("Erreur lors de l'ajout de la tâche :", error);
     } finally {
@@ -59,7 +60,7 @@ $(document).ready(function () {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedTask),
       });
-      loadTasks();
+      await loadTasks();
     } catch (error) {
       console.error("Erreur lors de la mise à jour de la tâche :", error);
     }
@@ -74,7 +75,7 @@ $(document).ready(function () {
       await fetch(`${apiEndpoint}?id=${taskId}`, {
         method: "DELETE",
       });
-      loadTasks();
+      await loadTasks();
     } catch (error) {
       console.error("Erreur lors de la suppression de la tâche :", error);
     }
@@ -127,9 +128,7 @@ $(document).ready(function () {
   // Fonction pour changer l'image toutes les deux fois
   function changeImage() {
     changeImageCounter++;
-    if (changeImageCounter % 2 === 0) {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      $("#alpha-image").attr("src", images[randomIndex]);
-    }
+    const imageIndex = changeImageCounter % 2; // Alterne entre 0 et 1
+    $("#alpha-image").attr("src", images[imageIndex]);
   }
 });

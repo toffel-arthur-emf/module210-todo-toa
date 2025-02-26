@@ -10,12 +10,13 @@ body {
   align-items: center;
   height: 100vh;
   color: #eaeaea;
-  box-sizing: border-box; /* Ajouté pour éviter que la largeur dépasse */
+  box-sizing: border-box;
+  cursor: url('https://e1.pngegg.com/pngimages/436/70/png-clipart-icone-de-souris-souris-d-ordinateur-pointeur-doigt-bouton-index-main-conception-d-icone-curseur-texte.png'), pointer;
 }
 
 /* Conteneur principal de l'application */
 .app-container {
-  background: rgba(51, 51, 51, 0.8);  /* Fond légèrement transparent pour que le texte soit lisible */
+  background: rgba(51, 51, 51, 0.8);
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
@@ -23,7 +24,7 @@ body {
   max-width: 800px;
   text-align: center;
   border: 3px solid #444;
-  backdrop-filter: blur(10px); /* Effet de verre dépoli */
+  backdrop-filter: blur(10px);
   box-sizing: border-box;
 }
 
@@ -39,7 +40,20 @@ body {
   border-radius: 50%;
   border: 5px solid #ff5733;
   box-shadow: 0 0 10px rgba(255, 87, 51, 0.6);
-  transition: transform 0.3s ease-in-out; /* Animation de transformation */
+  animation: moveZoom 10s infinite alternate; /* Animation qui fait zoomer et déplacer l'image */
+}
+
+/* Animation de mouvement et zoom continu */
+@keyframes moveZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.2) translate(10px, -10px);
+  }
+  100% {
+    transform: scale(1) translate(-10px, 10px);
+  }
 }
 
 /* Titre de l'application */
@@ -49,7 +63,7 @@ h1 {
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-  transition: color 0.3s ease; /* Effet de transition de la couleur */
+  transition: color 0.3s ease;
 }
 
 /* Formulaire d'ajout de tâche */
@@ -57,6 +71,8 @@ h1 {
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
+  padding: 15px;
+  background: none;
 }
 
 #todo-input {
@@ -64,7 +80,7 @@ h1 {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #444;
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px;
   outline: none;
   background-color: #444;
   color: #eaeaea;
@@ -77,11 +93,14 @@ button {
   border: none;
   border-radius: 0 8px 8px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Animation au survol */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 button:hover {
   background-color: #c0392b;
+  box-shadow: 0 6px 20px rgba(255, 87, 51, 0.8);
+  transform: scale(1.05);
 }
 
 /* Section des colonnes de tâches */
@@ -93,7 +112,7 @@ button:hover {
   max-width: 750px;
   width: 100%;
   overflow-y: auto;
-  box-sizing: border-box; /* Ajouté pour ajuster la largeur */
+  box-sizing: border-box;
 }
 
 /* Conteneur de chaque liste avec une hauteur fixe */
@@ -102,17 +121,18 @@ button:hover {
   background-color: #444;
   padding: 15px;
   border-radius: 8px;
-  max-height: 400px;  /* Hauteur fixe de la colonne */
-  min-height: 400px;  /* Assure qu'elle ne soit jamais plus petite */
-  overflow-y: auto;   /* Permet un défilement */
-  box-sizing: border-box; /* Ajouté pour éviter l'agrandissement excessif des éléments */
+  max-height: 400px;
+  min-height: 400px;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 /* Titre des colonnes */
 .task-column h2 {
   color: #eaeaea;
   margin-bottom: 15px;
-  transition: color 0.3s ease; /* Transition pour un changement de couleur */
+  transition: color 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 87, 51, 0.8);
 }
 
 /* Liste des tâches */
@@ -132,7 +152,7 @@ button:hover {
   border-radius: 8px;
   margin-bottom: 10px;
   background: #555;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Animation fluide */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   transform: translateY(10px);
 }
@@ -154,18 +174,11 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.3s ease; /* Transition de la couleur au survol */
+  margin: 0;
 }
 
 .delete-btn i {
   font-size: 1.2rem;
-  transition: transform 0.2s ease;
-}
-
-/* Effet au survol de l'icône de corbeille */
-.delete-btn:hover i {
-  transform: scale(1.2);
-  color: #c0392b;
 }
 
 /* Checkbox pour la tâche */
@@ -180,6 +193,7 @@ button:hover {
 #todo-list li.show, #completed-list li.show {
   opacity: 1;
   transform: translateY(0);
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 /* Animation de suppression */
@@ -190,5 +204,10 @@ button:hover {
 }
 
 #todo-list li.deleting .delete-btn, #completed-list li.deleting .delete-btn {
-  display: none;  /* Cache le bouton pendant l'animation */
+  display: none;
+}
+
+#todo-list li:hover, #completed-list li:hover {
+  background-color: #666;
+  box-shadow: 0 0 15px rgba(255, 87, 51, 0.6);
 }

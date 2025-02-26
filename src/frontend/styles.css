@@ -206,8 +206,9 @@ button:hover {
 #todo-list li.deleting .delete-btn, #completed-list li.deleting .delete-btn {
   display: none;
 }
-
 #todo-list li:hover, #completed-list li:hover {
   background-color: #666;
   box-shadow: 0 0 15px rgba(255, 87, 51, 0.6);
 }
+
+

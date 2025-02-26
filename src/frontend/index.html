@@ -1,37 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sigma Tasks</title>
+  <title>Es-tu un sigma ?</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="app.js" defer></script>
 </head>
 <body>
   <div class="app-container">
-    <div class="image-container">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1ARFUTwD-EhOZd_iyaLJV2yNqNFnWLxuPQ&s" alt="Alpha Image" class="alpha-image" id="alpha-image">
-    </div>
-    <h1>Sigma Tasks</h1>
-    <form id="todo-form">
-      <input type="text" id="todo-input" placeholder="Add a new task" required>
-      <button type="submit">Add</button>
-    </form>
-
-    <div class="task-columns">
-      <div class="task-column">
-        <h2>Tâches à faire</h2>
-        <ul id="todo-list"></ul>
-      </div>
-      <div class="task-column">
-        <h2>Tâches réalisées</h2>
-        <ul id="completed-list"></ul>
-      </div>
-    </div>
+    <h1>Es-tu un sigma ?</h1>
+    <button onclick="window.location.href='main.html'">Oui</button>
+    <button onclick="window.location.href='non.html'">Non</button>
   </div>
 </body>
 </html>
